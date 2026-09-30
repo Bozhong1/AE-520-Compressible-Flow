@@ -1,0 +1,139 @@
+\section*{Problem 1 --- Solution}
+Heat into the gas and work done by the gas are positive. The gas is a closed
+system with boundary work only and negligible changes in bulk kinetic and
+potential energy. Here $E$ is total internal energy and $e=E/m$. Use $R_u=8.31446~\mathrm{J/(mol\,K)}$; bars denote molar quantities.
+
+\partlabel{(a)}
+\textbf{(i) Isothermal:} $T=\text{constant}$.
+% L3 notes, PDF p.1 (printed p.25), Eqs. (72)--(74): ideal gas and CPG.
+% L1 notes, PDF p.13 (printed p.16), Eqs. (21)--(24): first law and work sign.
+\begin{align*}
+T_{2,\mathrm{iso}}&=T_1=\boxed{300~\mathrm{K}},
+& pV&=nR_uT_1=\text{constant},
+& \frac{V_{2,\mathrm{iso}}}{V_1}&=\frac{p_1}{p_2}=\frac18.
+\end{align*}
+For a calorically perfect gas, $\Delta E=n\bar c_v(T_2-T_1)=0$.
+Thus the first law gives $0=Q-W_{\mathrm{by}}$, or $Q=W_{\mathrm{by}}$.
+The reversible boundary work is
+% L1 notes PDF p.10 Eq. (9), p.13 Eq. (23); L3 PDF p.14 Eq. (164).
+\begin{align*}
+W_{\mathrm{by,iso}}
+&=\int_{V_1}^{V_{2,\mathrm{iso}}}p\,dV
+ =nR_uT_1\int_{V_1}^{V_{2,\mathrm{iso}}}\frac{dV}{V}\\
+&=nR_uT_1\ln\frac{V_{2,\mathrm{iso}}}{V_1}
+ =-(1)(8.31446)(300)\ln8
+ =\boxed{-5.187~\mathrm{kJ}}.
+\end{align*}
+
+\smallskip
+\noindent\textbf{(ii) Reversible adiabatic:} $Q=0$ and $S_{\mathrm{gen}}=0$,
+so $\Delta S=0$.
+% L2 notes PDF p.2 Eq. (25): entropy balance. L3 PDF p.1 Eq. (75),
+% p.14 Eqs. (167)--(170): reversible adiabatic / isentropic CPG relations.
+\begin{align*}
+pV^\gamma&=\text{constant},
+& \frac{T_{2,\mathrm{ad}}}{T_1}
+ &=\left(\frac{p_2}{p_1}\right)^{(\gamma-1)/\gamma},\\
+T_{2,\mathrm{ad}}&=300(8)^{0.4/1.4}
+ =\boxed{543.4~\mathrm{K}}.
+\end{align*}
+To obtain the molar heat capacity,
+% L2 notes PDF p.6 (printed p.21), Eq. (40), converted to a molar basis.
+% M denotes molar mass here; cp_bar = M cp and cv_bar = M cv by definition.
+\begin{align*}
+\bar c_p&=\bar c_v+R_u,
+& \gamma&=\frac{\bar c_p}{\bar c_v},\\
+(\gamma-1)\bar c_v&=R_u,
+& \bar c_v&=\frac{R_u}{\gamma-1}
+ =20.7862~\mathrm{J/(mol\,K)}.
+\end{align*}
+Apply the first law with $Q=0$:
+% L1 PDF p.13 Eqs. (21), (24) + L3 PDF p.1 Eq. (74).
+% The work relation below is derived by combining these sourced equations.
+\begin{align*}
+\Delta E&=Q-W_{\mathrm{by,ad}}=-W_{\mathrm{by,ad}},\\
+W_{\mathrm{by,ad}}&=-\Delta E=-m\Delta e
+ =-n\bar c_v(T_{2,\mathrm{ad}}-T_1)
+ =\boxed{-5.060~\mathrm{kJ}}.
+\end{align*}
+Unrounded intermediate values are used in the numerical calculations.
+
+\newpage
+\partlabel{(b)}
+% L2 notes PDF p.9 (printed p.24), Eq. (68); multiply by n M to obtain total S.
+% L1 notation table PDF p.2: specific vs molar quantities.
+Use the ideal-gas entropy relation and convert totals to mass-specific values:
+\begin{gather*}
+\Delta S_{\mathrm{sys}}
+ =n\left(\bar c_p\ln\frac{T_2}{T_1}-R_u\ln\frac{p_2}{p_1}\right),
+\qquad \bar c_p=\frac{\gamma R_u}{\gamma-1},\\
+m=nM_{\mathrm{O_2}}=(1~\mathrm{mol})(0.03200~\mathrm{kg/mol})=0.03200~\mathrm{kg},
+\qquad \Delta e=\frac{\Delta E}{m},\quad q=\frac{Q}{m},\quad
+\Delta s_{\mathrm{sys}}=\frac{\Delta S_{\mathrm{sys}}}{m}.
+\end{gather*}
+Here $M_{\mathrm{O_2}}=32.00~\mathrm{g/mol}$ is the rounded molar mass used
+for the requested mass-specific results.
+
+\smallskip
+\noindent\textbf{(i) Isothermal:}
+\begin{align*}
+\Delta E&=0,\qquad Q=W_{\mathrm{by,iso}}=-5.187~\mathrm{kJ},\\
+\Delta S_{\mathrm{sys}}&=n\left(\bar c_p\ln1-R_u\ln8\right)
+ =-nR_u\ln8=-17.29~\mathrm{J/K},
+\end{align*}
+\[
+\boxed{\Delta e=0},\qquad
+\boxed{q=-162.1~\mathrm{kJ/kg}},\qquad
+\boxed{\Delta s_{\mathrm{sys}}=-0.5403~\mathrm{kJ/(kg\,K)}}.
+\]
+
+\smallskip
+\noindent\textbf{(ii) Reversible adiabatic:}
+\begin{align*}
+\Delta E&=n\bar c_v(T_{2,\mathrm{ad}}-T_1)=+5.060~\mathrm{kJ},
+\qquad Q=0,\\
+\Delta S_{\mathrm{sys}}
+&=n\left[\frac{\gamma R_u}{\gamma-1}
+ \frac{\gamma-1}{\gamma}\ln8-R_u\ln8\right]=0,
+\end{align*}
+\[
+\boxed{\Delta e=+158.1~\mathrm{kJ/kg}},\qquad
+\boxed{q=0},\qquad \boxed{\Delta s_{\mathrm{sys}}=0}.
+\]
+
+\partlabel{(c)}
+\textbf{(i) Isothermal:} The surroundings supply $5.187~\mathrm{kJ}$ of work
+and receive $5.187~\mathrm{kJ}$ of heat in a $300~\mathrm{K}$ reservoir.
+For reversible heat transfer, the temperature difference tends to zero.
+% L2 notes PDF p.2 (printed p.17), Eq. (25), integrated for a reversible reservoir.
+% Heat received by the surroundings is minus the heat received by the gas.
+\begin{align*}
+Q_{\mathrm{surr}}&=-Q=+5.187~\mathrm{kJ},\\
+\Delta S_{\mathrm{surr}}&=\frac{Q_{\mathrm{surr}}}{300~\mathrm{K}}
+ =+17.29~\mathrm{J/K},\\
+\Delta S_{\mathrm{universe}}&=\Delta S_{\mathrm{sys}}+\Delta S_{\mathrm{surr}}
+ =-17.29+17.29=\boxed{0}.
+\end{align*}
+\textbf{(ii) Reversible adiabatic:} An ideal work source supplies
+$5.060~\mathrm{kJ}$; the insulated boundary permits no heat transfer.
+\[
+\boxed{\Delta S_{\mathrm{sys}}=\Delta S_{\mathrm{surr}}
+=\Delta S_{\mathrm{universe}}=0.}
+\]
+The ideal work source transfers energy without entropy. Both processes have
+zero entropy generation because they are reversible.
+
+\partlabel{(d)}
+% Work input is defined as minus work by; volumes follow from L3 PDF p.1 Eq. (72).
+\begin{gather*}
+W_{\mathrm{in}}=-W_{\mathrm{by}},\qquad
+\boxed{W_{\mathrm{in,iso}}=5.187~\mathrm{kJ}},\qquad
+\boxed{W_{\mathrm{in,ad}}=5.060~\mathrm{kJ}},\\
+V_{2,\mathrm{iso}}=\frac{nR_uT_1}{p_2}=3.118~\mathrm{L},\qquad
+V_{2,\mathrm{ad}}=\frac{nR_uT_{2,\mathrm{ad}}}{p_2}=5.648~\mathrm{L}.
+\end{gather*}
+For these data, the adiabatic path requires $0.1268~\mathrm{kJ}$ less work
+input. Its temperature rises, so it reaches $8~\mathrm{bar}$ at a larger
+volume and stops sooner. The final pressures are equal, but the final states
+are different; comparing the paths at the same final volume would give a
+different work comparison.

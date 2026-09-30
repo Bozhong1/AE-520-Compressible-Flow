@@ -1,0 +1,146 @@
+\section*{Problem 7 --- Solution}
+
+\partlabel{(a)}
+For a single-phase, fixed-composition substance, let $h$, $s$, and $v$ be
+mass-specific properties. Since $h=h(T,p)$,
+% L2 notes, PDF p.6 (printed p.21), Eq. (40): cp definition.
+\begin{align*}
+dh&=\left(\frac{\partial h}{\partial T}\right)_p dT
+   +\left(\frac{\partial h}{\partial p}\right)_T dp
+ =c_p\,dT+\left(\frac{\partial h}{\partial p}\right)_T dp.
+\end{align*}
+% L3 notes, PDF p.4 (printed p.28), Eqs. (91), (97)--(99).
+Using $dh=T\,ds+v\,dp$ and the mass-specific Gibbs energy $g=h-Ts$,
+\begin{align*}
+dg&=dh-T\,ds-s\,dT
+   =(T\,ds+v\,dp)-T\,ds-s\,dT=-s\,dT+v\,dp.
+\end{align*}
+\[
+\left(\frac{\partial g}{\partial T}\right)_p=-s,\qquad
+\left(\frac{\partial g}{\partial p}\right)_T=v.
+\]
+The mixed derivatives of the state function $g$ are equal, so
+\[
+\frac{\partial}{\partial p}\left(\frac{\partial g}{\partial T}\right)_p
+=\frac{\partial}{\partial T}\left(\frac{\partial g}{\partial p}\right)_T
+\quad\Longrightarrow\quad
+\left(\frac{\partial s}{\partial p}\right)_T
+=-\left(\frac{\partial v}{\partial T}\right)_p.
+\]
+Therefore, at fixed $T$,
+\[
+\left(\frac{\partial h}{\partial p}\right)_T
+=T\left(\frac{\partial s}{\partial p}\right)_T+v
+=v-T\left(\frac{\partial v}{\partial T}\right)_p,
+\]
+% L3 notes, PDF p.5 (printed p.29), Eq. (106).
+and substitution gives
+\[
+\boxed{dh=c_p\,dT+
+\left[v-T\left(\frac{\partial v}{\partial T}\right)_p\right]dp.}
+\]
+
+\partlabel{(b)}
+% L3 notes, PDF p.2 (printed p.26), Eq. (79), and PDF p.6,
+% printed p.30, Eqs. (112)--(113).
+With the mass-specific gas constant $R$, $Z=pv/(RT)$ gives
+\[
+v=\frac{ZRT}{p},\qquad
+\left(\frac{\partial v}{\partial T}\right)_p
+=\frac{R}{p}\left[Z+T\left(\frac{\partial Z}{\partial T}\right)_p\right].
+\]
+Thus,
+\begin{align*}
+v-T\left(\frac{\partial v}{\partial T}\right)_p
+&=\frac{ZRT}{p}-\frac{RT}{p}
+  \left[Z+T\left(\frac{\partial Z}{\partial T}\right)_p\right]\\
+&=\frac{ZRT}{p}-\frac{ZRT}{p}
+  -\frac{RT^2}{p}\left(\frac{\partial Z}{\partial T}\right)_p
+=-\frac{RT^2}{p}\left(\frac{\partial Z}{\partial T}\right)_p.
+\end{align*}
+Hence
+\[
+\boxed{dh=c_p\,dT-\frac{RT^2}{p}
+\left(\frac{\partial Z}{\partial T}\right)_p dp.}
+\]
+For an ideal gas, $Z=1$, so the pressure term vanishes.
+
+\newpage
+\partlabel{(c)}
+The supplied $B$ is molar; use $\bar v$, $\bar h$, and
+$R_u=8.314462618\ \mathrm{J\,mol^{-1}K^{-1}}$. Also,
+\[
+\mathcal M=0.0280134\ \mathrm{kg\,mol^{-1}},\qquad
+\Delta p=(200-1)\times10^5=1.99\times10^7\ \mathrm{Pa}.
+\]
+% HW1 PDF p.3, P7(c): model and data. L3 notes, PDF p.11
+% (printed p.35), Eqs. (140)--(141): corresponding molar model.
+Within the supplied pressure-truncated model,
+\begin{align*}
+Z&=1+\frac{B(T)p}{R_uT},
+&\bar v&=\frac{ZR_uT}{p}=\frac{R_uT}{p}+B(T),\\
+\left(\frac{\partial\bar v}{\partial T}\right)_p
+&=\frac{R_u}{p}+B'(T),
+&B'(T)&\equiv\frac{dB}{dT}.
+\end{align*}
+Since $dT=0$, the molar form of part (a) gives
+\begin{align*}
+d\bar h
+&=\left[\frac{R_uT}{p}+B
+-T\left(\frac{R_u}{p}+B'\right)\right]dp
+=(B-TB')\,dp,\\
+\Delta\bar h&=\int_{p_1}^{p_2}(B-TB')\,dp=(B-TB')\Delta p.
+\end{align*}
+\[
+\boxed{\Delta h=\frac{\Delta\bar h}{\mathcal M}
+=\frac{(B-TB')\Delta p}{\mathcal M}.}
+\]
+
+\textbf{(i) Rigid spheres.}
+With $N_A=6.02214076\times10^{23}\ \mathrm{mol^{-1}}$,
+% HW1 PDF p.3, P7(c)(i), supplies B_RS; L3 notes PDF p.11,
+% Eqs. (137)--(138), give the constant-excluded-volume limit.
+\begin{align*}
+B_{\rm RS}
+&=\frac{2\pi}{3}N_A\sigma^3
+=\frac{2\pi}{3}(6.02214076\times10^{23})(3.681\times10^{-10})^3\\
+&=6.2908158\times10^{-5}\ \mathrm{m^3\,mol^{-1}},
+\qquad B'_{\rm RS}=0,\\
+\Delta\bar h_{\rm RS}
+&=(6.2908158\times10^{-5})(1.99\times10^7)
+=1251.872\ \mathrm{J\,mol^{-1}},\\
+\Delta h_{\rm RS}
+&=\frac{1251.872}{0.0280134}\ \mathrm{J\,kg^{-1}}
+=\boxed{+44.69\ \mathrm{kJ\,kg^{-1}}}.
+\end{align*}
+
+\textbf{(ii) Attraction-inclusive model.}
+% HW1 PDF p.3, P7(c)(ii): B and its temperature derivative.
+\begin{align*}
+B-TB'&=[-75.7-150(1.01)]\times10^{-6}
+=-227.2\times10^{-6}\ \mathrm{m^3\,mol^{-1}},\\
+\Delta\bar h&=(-227.2\times10^{-6})(1.99\times10^7)
+=-4521.280\ \mathrm{J\,mol^{-1}},\\
+\Delta h&=\frac{-4521.280}{0.0280134}\ \mathrm{J\,kg^{-1}}
+=\boxed{-161.4\ \mathrm{kJ\,kg^{-1}}}.
+\end{align*}
+% L3 notes, PDF p.11 (printed p.35), Example D;
+% enthalpy definition also PDF p.15 (printed p.39), Eq. (173).
+At fixed $T$, the same model gives
+\[
+\Delta\bar e=\Delta\bar h-\Delta(p\bar v)
+=(B-TB')\Delta p-B\Delta p=-TB'\Delta p.
+\]
+Rigid spheres have $B'=0$: internal energy is unchanged, and the positive
+enthalpy change comes from $p\bar v$. Attractions introduce a negative
+internal-energy contribution; here $B-TB'<0$, reversing the enthalpy trend.
+
+% L3 notes, PDF p.9 (printed p.33), Eqs. (125)--(126):
+% the virial expansion is a low-density expansion.
+At $200\ \mathrm{bar}$, however,
+\[
+Z_{\rm RS}=2.0088,\qquad Z_{\rm attraction}=-0.21395.
+\]
+The rigid-sphere correction is not small, and the negative $Z$ in model (ii)
+is unphysical. These are formal results of the assigned truncation;
+model (ii) fails before the final pressure is reached.

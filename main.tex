@@ -1,76 +1,31 @@
-% Provides the preamble hooks used by the original homework class.
+% Preamble hooks required by the supplied homework template.
 \RequirePackage{etoolbox}
-\documentclass{homework}
-% XeTeX/Tectonic does not support microtype letterspacing.
-% pdfLaTeX on Overleaf keeps the original template setting.
+\documentclass[11pt]{homework}
+% Preserve the original pdfLaTeX setting; XeTeX does not support tracking.
 \ifXeTeX
   \AtEndPreamble{\microtypesetup{tracking=false}}
 \fi
 \author{Boyang Chen}
 \class{AE 520 Compressible Flow}
 \date{September 29, 2026}
-\title{Homework 1 -- Workflow Test}
+\title{Homework 1}
+\newcommand{\partlabel}[1]{\par\addvspace{0.7\baselineskip}\Needspace{5\baselineskip}\noindent\textbf{#1}\quad\ignorespaces}
+\setlength{\parindent}{0pt}
 
 \begin{document}
 \maketitle
-
-\noindent\textbf{TEST ONLY -- NOT FOR SUBMISSION.}
-This short example checks the template, equations, PDF compilation, and GitHub
-transfer. The final solution will be written from the student's handwritten
-reasoning and steps.
-
-\medskip
-\question Two routes to the same final pressure (sample only).
-One mole of ideal oxygen starts at $T_1=300~\mathrm{K}$ and
-$p_1=1~\mathrm{bar}$. The specified final pressure is $p_2=8~\mathrm{bar}$.
-Take $\gamma=1.40$ and assume a calorically perfect gas.
+\input{solutions/problem1}
+\clearpage
+\input{solutions/problem5}
+\clearpage
+\input{solutions/problem7}
+\clearpage
+\input{solutions/problem8}
 
 \medskip
-\noindent\textbf{Sample calculation: the adiabatic work relation.}
-For a closed system with negligible changes in bulk kinetic and potential
-energy, heat into the gas is positive and work done by the gas is positive.
-The first law is
-\begin{equation*}
-  dE=\delta Q-\delta W_{\mathrm{by}}
-  \quad\Longrightarrow\quad
-  \Delta E=Q-W_{\mathrm{by}}.
-\end{equation*}
-\noindent\textit{Source:} Lecture 1 organized notes, PDF page 13
-(printed page 16), Eqs.~(21)--(24). The finite-process form follows by integration.
-Here $E$ denotes the total internal energy of the gas.
-
-\medskip
-For an adiabatic process, $Q=0$. Rearranging the first law therefore gives
-\begin{equation*}
-  \Delta E=-W_{\mathrm{by,ad}}
-  \quad\Longrightarrow\quad
-  W_{\mathrm{by,ad}}=-\Delta E.
-\end{equation*}
-For a calorically perfect gas, subtract the endpoint values in
-$e=c_vT+e_{\mathrm{ref}}$ and multiply by the fixed mass $m$:
-\begin{equation*}
-  \Delta E=m c_v(T_2-T_1)=n\bar c_v(T_2-T_1).
-\end{equation*}
-\noindent\textit{Source:} Lecture 3 organized notes, PDF page 1
-(printed page 25), Eq.~(74), followed by endpoint subtraction and a basis
-conversion. Here $e$ and $c_v$ are mass-specific, $n$ is the amount in moles,
-and $\bar c_v$ is the molar heat capacity; by definition $m c_v=n\bar c_v$.
-
-\medskip
-Substituting this energy change into the adiabatic first law gives
-\begin{equation*}
-  \boxed{W_{\mathrm{by,ad}}=-n\bar c_v(T_2-T_1).}
-\end{equation*}
-This is a combination of the two cited relations. It is not a separate
-formula quoted directly from the notes. If compression raises the temperature,
-work done by the gas is negative.
-
-\medskip
-\noindent\textbf{Status:} This is an incomplete test excerpt, not an answer
-to all parts of Problem 1. Test text and LaTeX preparation were assisted by
-ChatGPT. The final submission will include an accurate acknowledgment of the
-assistance actually used.
-
+\hrule
+\smallskip
+{\footnotesize\textit{AI assistance:} ChatGPT assisted with LaTeX preparation and
+checking for Problem 1, based on my handwritten steps, and with drafting and
+checking Problems 5, 7, and 8.}
 \end{document}
-
-

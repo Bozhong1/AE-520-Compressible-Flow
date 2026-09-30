@@ -1,0 +1,59 @@
+\section*{Problem 5 --- Solution}
+
+Let $h$ and $c$ denote the initially hot and cold blocks. Each rigid block has
+constant total heat capacity $C=500\,\mathrm{J/K}$. The combined system is
+isolated; kinetic and potential energy changes are negligible.
+
+\partlabel{(a)}
+% First law: Lecture 1 notes, PDF p.13 (printed p.16), Eqs. (21), (24).
+% dE=C dT: constant total block heat capacity specified in Problem 5.
+For the two blocks together, $Q_{\mathrm{ext}}=W_{\mathrm{ext}}=0$. Hence
+\begin{align*}
+\Delta E_h+\Delta E_c&=0,\\
+C(T_f-500\,\mathrm{K})+C(T_f-300\,\mathrm{K})&=0,\\
+T_f&=\boxed{400\,\mathrm{K}}.
+\end{align*}
+The hot block loses $50.0\,\mathrm{kJ}$ and the cold block gains the same amount.
+
+\partlabel{(b)}
+% Entropy balance: Lecture 2 notes, PDF p.2 (printed p.17), Eqs. (25)-(26).
+% Reversible comparison path: Lecture 2 notes, PDF p.3 (printed p.18),
+% Eq. (31) and the following point 1. Entropy is a state property.
+The actual heat transfer is irreversible. Since entropy is a state property,
+use a reversible auxiliary path between each block's initial and final states:
+\[
+\delta Q_{\mathrm{rev}}=dE=C\,dT,
+\qquad
+\Delta S=\int_{T_i}^{T_f}\frac{\delta Q_{\mathrm{rev}}}{T}
+=C\ln\frac{T_f}{T_i}.
+\]
+Thus
+\begin{align*}
+\Delta S_h&=(500\,\mathrm{J/K})\ln\frac{400}{500}
+=\boxed{-111.57\,\mathrm{J/K}},\\
+\Delta S_c&=(500\,\mathrm{J/K})\ln\frac{400}{300}
+=\boxed{+143.84\,\mathrm{J/K}}.
+\end{align*}
+The external surroundings are unchanged, so
+\[
+\boxed{\Delta S_{\mathrm{universe}}
+=\Delta S_h+\Delta S_c
+=32.27\,\mathrm{J/K}>0.}
+\]
+This is also the entropy generated within the isolated two-block system.
+
+\partlabel{(c)}
+The first law requires only that energy lost by one block equal energy gained
+by the other; it permits either sign of heat transfer. The second law selects
+the spontaneous direction. In a uniform-temperature description of each block,
+let $\delta Q>0$ flow from the hot block to the cold block. Then
+% Combine dS=dE/T for each rigid equilibrium block with the isolated-system
+% entropy inequality: Lecture 2 notes, PDF p.2 (printed p.17), Eq. (26).
+\[
+dS_{\mathrm{universe}}
+=-\frac{\delta Q}{T_h}+\frac{\delta Q}{T_c}
+=\delta Q\left(\frac{1}{T_c}-\frac{1}{T_h}\right)>0
+\qquad (T_h>T_c).
+\]
+Heat flow in the reverse direction, with no other effect, would decrease the
+universe's entropy and violate the second law.
