@@ -106,36 +106,14 @@ Unrounded values are retained: argon's cooling and volume terms nearly cancel,
 but its net entropy change is positive.
 
 \partlabel{(c)}
-% Derived by subtracting the two temperature-volume entropy expressions above.
-The temperature terms in (a) and (b) cancel. The additional entropy is
+% Subtract the total entropy changes obtained in (a) and (b).
+The additional entropy is
 \[
-\boxed{\Delta S_{\mathrm{extra}}=\Delta S_b-\Delta S_a
-=R_u\sum_i n_i\ln\frac{V}{V_{i,0}}
-=473.872~\mathrm{J/K}.}
+\Delta S_{\mathrm{extra}}=\Delta S_b-\Delta S_a
+\simeq 546.156-72.2843
+=\boxed{473.872~\mathrm{J/K}}.
 \]
-It arises because each species gains access to a larger volume.
-% L4 notes PDF p.5 (printed p.46), Eqs. (204)--(206): mole fractions and
-% conventional ideal-gas mixing at common initial temperature and pressure.
-To relate this to the usual ideal-gas mixing formula, define
-\[
-x_i=\frac{n_i}{n_1+n_2},\qquad x_1=0.71347818,\qquad x_2=0.28652182.
-\]
-At the common final temperature, the ideal-gas laws give
-\[
-\frac{p_{i,a}}{p_f}
-=\frac{n_iR_uT_f/V_{i,0}}{(n_1+n_2)R_uT_f/V}
-=\frac{x_iV}{V_{i,0}}
-\quad\Longrightarrow\quad
-\ln\frac{V}{V_{i,0}}=-\ln x_i+\ln\frac{p_{i,a}}{p_f}.
-\]
-% This decomposition is derived here; it is not a direct quotation from the notes.
-Thus
-\begin{align*}
-\Delta S_{\mathrm{extra}}
-&=\underbrace{-R_u\sum_i n_i\ln x_i}_{\text{mixing at common }T,p}
-+\underbrace{R_u\sum_i n_i\ln\frac{p_{i,a}}{p_f}}_{\text{pressure redistribution}}\\
-&=435.125+38.7471=\boxed{473.872~\mathrm{J/K}}.
-\end{align*}
-Part (a) ends at a common temperature but unequal pressures, so the additional
-entropy includes both contributions. This is a decomposition between equilibrium
-states, not a claim that the actual process occurs in two successive stages.
+In (b), each gas can spread through the entire vessel, whereas in (a) it stays
+in its original compartment. I think this additional volume contribution is
+related to ideal-gas mixing. I have not yet worked out how to connect it to the
+usual mole-fraction expression for mixing entropy.

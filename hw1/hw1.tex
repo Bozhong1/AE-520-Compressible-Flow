@@ -1,0 +1,27 @@
+% Preamble hooks required by the supplied homework template.
+\RequirePackage{etoolbox}
+\documentclass[11pt]{homework}
+% Preserve the original pdfLaTeX setting; XeTeX does not support tracking.
+\ifXeTeX
+  \AtEndPreamble{\microtypesetup{tracking=false}}
+\fi
+\author{Boyang Chen}
+\class{AE 520 Compressible Flow}
+\date{September 30, 2026}
+\title{Homework 1}
+\newcommand{\partlabel}[1]{\par\addvspace{0.7\baselineskip}\Needspace{5\baselineskip}\noindent\textbf{#1}\quad\ignorespaces}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+\maketitle
+\input{solutions/problem1}
+\clearpage
+\input{solutions/problem5}
+\clearpage
+\input{solutions/problem7}
+\clearpage
+\input{solutions/problem8}
+\clearpage
+\input{solutions/problem11}
+
+\end{document}
