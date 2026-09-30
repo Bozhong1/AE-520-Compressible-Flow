@@ -1,15 +1,15 @@
 # AE 520 -- Homework 1
 
-Selected solutions for **Problems 1, 5, 7, and 8**. The document contains solutions only, without the question statements. Advanced problems are not included.
+Selected solutions for **Problems 1, 5, 7, 8, and 11**. The document contains solutions only, without the question statements. Problem 11 is the selected advanced problem.
 
-Problem 1 follows the student's supplied handwritten sequence, with work-sign and total/molar/mass-specific notation corrections. Problems 5, 7, and 8 follow the same format: state the conditions, write the governing equation, show substitutions and cancellations, then report the result and a short physical explanation.
+Problem 1 follows the student's supplied handwritten sequence, with work-sign and total/molar/mass-specific notation corrections. Problems 5, 7, 8, and 11 follow the same format: state the conditions, write the governing equation, show substitutions and cancellations, then report the result and a short physical explanation.
 
 ## Project files
 
 - `main.tex`: main document for Overleaf; use pdfLaTeX.
-- `solutions/problem1.tex`, `problem5.tex`, `problem7.tex`, `problem8.tex`: one editable file per problem.
+- `solutions/problem1.tex`, `problem5.tex`, `problem7.tex`, `problem8.tex`, `problem11.tex`: one editable file per problem.
 - `preview/Boyang Chen AE 520 HW1 - Solutions.pdf`: compiled document.
-- `matlab/HW1_Problem7.m` and `matlab/HW1_Problem8.m`: separate standalone numerical checks, verified with MATLAB R2024b.
+- `matlab/HW1_Problem7.m`, `matlab/HW1_Problem8.m`, and `matlab/HW1_Problem11.m`: separate standalone numerical checks, verified with MATLAB R2024b.
 - `preview/workflow-test.pdf`: earlier workflow test, retained for reference; not the current solution.
 
 Exact lecture-note PDF pages and equation numbers are retained in comments next to the corresponding LaTeX derivations. The original handwritten PDF, assignment, course notes, and detailed study solutions remain unchanged outside this repository.
@@ -30,4 +30,4 @@ The author field is retained from the supplied `HW template.tex`. Supporting fil
 
 ## AI assistance
 
-ChatGPT assisted with LaTeX preparation and checking for Problem 1 based on the student's handwritten steps, and with drafting and checking Problems 5, 7, and 8. The PDF contains an acknowledgment describing that assistance. This repository does not submit work to Canvas.
+ChatGPT assisted with LaTeX preparation and checking for Problem 1 based on the student's handwritten steps, and with drafting and checking Problems 5, 7, 8, and 11. The PDF contains an acknowledgment describing that assistance. This repository does not submit work to Canvas.
