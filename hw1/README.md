@@ -2,7 +2,7 @@
 
 Selected solutions for **Problems 1, 5, 7, 8, and 11**. The document contains solutions only, without the question statements. Problem 11 is the selected advanced problem; part (c) is a partial explanation that leaves the connection to the usual mixing formula unresolved.
 
-Problem 1 follows the student's supplied handwritten sequence, with work-sign and total/molar/mass-specific notation corrections. Problems 5, 7, 8, and 11 follow the same format: state the conditions, write the governing equation, show substitutions and cancellations, then report the result and a short physical explanation.
+Problem 1 follows the student's supplied handwritten sequence, with work-sign and total/molar/mass-specific notation corrections. Problems 5, 7, 8, and 11 follow the student-edited Problem 1 style: use equations, substitutions, cancellations, and arrows to express the reasoning, with only essential definitions and short physical explanations in prose.
 
 ## Project files
 

@@ -1,25 +1,22 @@
-\section*{Problem 7 --- Solution}
+\section*{Problem 7}
 
 \partlabel{(a)}
-For a single-phase, fixed-composition substance, let $h$, $s$, and $v$ be
-mass-specific properties. Since $h=h(T,p)$,
+Single phase, fixed composition; $h,s,v,g$ are mass-specific.
 % L2 notes, PDF p.6 (printed p.21), Eq. (40): cp definition.
-\begin{align*}
-dh&=\left(\frac{\partial h}{\partial T}\right)_p dT
+\begin{gather*}
+h=h(T,p),\qquad c_p=\left(\frac{\partial h}{\partial T}\right)_p,\\
+dh=\left(\frac{\partial h}{\partial T}\right)_p dT
    +\left(\frac{\partial h}{\partial p}\right)_T dp
  =c_p\,dT+\left(\frac{\partial h}{\partial p}\right)_T dp.
-\end{align*}
+\end{gather*}
 % L3 notes, PDF p.4 (printed p.28), Eqs. (91), (97)--(99).
-Using $dh=T\,ds+v\,dp$ and the mass-specific Gibbs energy $g=h-Ts$,
-\begin{align*}
-dg&=dh-T\,ds-s\,dT
-   =(T\,ds+v\,dp)-T\,ds-s\,dT=-s\,dT+v\,dp.
-\end{align*}
-\[
+\begin{gather*}
+dh=T\,ds+v\,dp,\qquad g=h-Ts,\\
+dg=dh-T\,ds-s\,dT
+   =(T\,ds+v\,dp)-T\,ds-s\,dT=-s\,dT+v\,dp,\\
 \left(\frac{\partial g}{\partial T}\right)_p=-s,\qquad
 \left(\frac{\partial g}{\partial p}\right)_T=v.
-\]
-The mixed derivatives of the state function $g$ are equal, so
+\end{gather*}
 \[
 \frac{\partial}{\partial p}\left(\frac{\partial g}{\partial T}\right)_p
 =\frac{\partial}{\partial T}\left(\frac{\partial g}{\partial p}\right)_T
@@ -27,15 +24,14 @@ The mixed derivatives of the state function $g$ are equal, so
 \left(\frac{\partial s}{\partial p}\right)_T
 =-\left(\frac{\partial v}{\partial T}\right)_p.
 \]
-Therefore, at fixed $T$,
 \[
 \left(\frac{\partial h}{\partial p}\right)_T
 =T\left(\frac{\partial s}{\partial p}\right)_T+v
-=v-T\left(\frac{\partial v}{\partial T}\right)_p,
+=v-T\left(\frac{\partial v}{\partial T}\right)_p
 \]
 % L3 notes, PDF p.5 (printed p.29), Eq. (106).
-and substitution gives
 \[
+\Longrightarrow\quad
 \boxed{dh=c_p\,dT+
 \left[v-T\left(\frac{\partial v}{\partial T}\right)_p\right]dp.}
 \]
@@ -43,13 +39,13 @@ and substitution gives
 \partlabel{(b)}
 % L3 notes, PDF p.2 (printed p.26), Eq. (79), and PDF p.6,
 % printed p.30, Eqs. (112)--(113).
-With the mass-specific gas constant $R$, $Z=pv/(RT)$ gives
+$R$: mass-specific gas constant.
 \[
+Z=\frac{pv}{RT}\quad\Longrightarrow\quad
 v=\frac{ZRT}{p},\qquad
 \left(\frac{\partial v}{\partial T}\right)_p
 =\frac{R}{p}\left[Z+T\left(\frac{\partial Z}{\partial T}\right)_p\right].
 \]
-Thus,
 \begin{align*}
 v-T\left(\frac{\partial v}{\partial T}\right)_p
 &=\frac{ZRT}{p}-\frac{RT}{p}
@@ -58,24 +54,29 @@ v-T\left(\frac{\partial v}{\partial T}\right)_p
   -\frac{RT^2}{p}\left(\frac{\partial Z}{\partial T}\right)_p
 =-\frac{RT^2}{p}\left(\frac{\partial Z}{\partial T}\right)_p.
 \end{align*}
-Hence
 \[
+\Longrightarrow\quad
 \boxed{dh=c_p\,dT-\frac{RT^2}{p}
 \left(\frac{\partial Z}{\partial T}\right)_p dp.}
 \]
-For an ideal gas, $Z=1$, so the pressure term vanishes.
-
-\newpage
-\partlabel{(c)}
-The supplied $B$ is molar; use $\bar v$, $\bar h$, and
-$R_u=8.314462618\ \mathrm{J\,mol^{-1}K^{-1}}$. Also,
 \[
-\mathcal M=0.0280134\ \mathrm{kg\,mol^{-1}},\qquad
-\Delta p=(200-1)\times10^5=1.99\times10^7\ \mathrm{Pa}.
+\text{Ideal gas:}\quad Z=1
+\quad\Longrightarrow\quad
+\left(\frac{\partial Z}{\partial T}\right)_p=0
+\quad\Longrightarrow\quad dh=c_p\,dT.
 \]
+
+\partlabel{(c)}
+Molar basis: $\bar v$, $\bar h$, $\bar e$, and $B$.
+\begin{gather*}
+R_u=8.314462618\ \mathrm{J\,mol^{-1}K^{-1}},\qquad
+\mathcal M=0.0280134\ \mathrm{kg\,mol^{-1}},\\
+T=150\ \mathrm K,\qquad dT=0,\qquad
+\Delta p=(200-1)\times10^5=1.99\times10^7\ \mathrm{Pa}.
+\end{gather*}
 % HW1 PDF p.3, P7(c): model and data. L3 notes, PDF p.11
 % (printed p.35), Eqs. (140)--(141): corresponding molar model.
-Within the supplied pressure-truncated model,
+Pressure-truncated model:
 \begin{align*}
 Z&=1+\frac{B(T)p}{R_uT},
 &\bar v&=\frac{ZR_uT}{p}=\frac{R_uT}{p}+B(T),\\
@@ -83,7 +84,6 @@ Z&=1+\frac{B(T)p}{R_uT},
 &=\frac{R_u}{p}+B'(T),
 &B'(T)&\equiv\frac{dB}{dT}.
 \end{align*}
-Since $dT=0$, the molar form of part (a) gives
 \begin{align*}
 d\bar h
 &=\left[\frac{R_uT}{p}+B
@@ -97,7 +97,7 @@ d\bar h
 \]
 
 \textbf{(i) Rigid spheres.}
-With $N_A=6.02214076\times10^{23}\ \mathrm{mol^{-1}}$,
+$N_A=6.02214076\times10^{23}\ \mathrm{mol^{-1}}$.
 % HW1 PDF p.3, P7(c)(i), supplies B_RS; L3 notes PDF p.11,
 % Eqs. (137)--(138), give the constant-excluded-volume limit.
 \begin{align*}
@@ -126,21 +126,20 @@ B-TB'&=[-75.7-150(1.01)]\times10^{-6}
 \end{align*}
 % L3 notes, PDF p.11 (printed p.35), Example D;
 % enthalpy definition also PDF p.15 (printed p.39), Eq. (173).
-At fixed $T$, the same model gives
-\[
+\begin{gather*}
+p\bar v=R_uT+Bp,\qquad dT=0
+\quad\Longrightarrow\quad\Delta(p\bar v)=B\Delta p,\\
 \Delta\bar e=\Delta\bar h-\Delta(p\bar v)
 =(B-TB')\Delta p-B\Delta p=-TB'\Delta p.
-\]
-Rigid spheres have $B'=0$: internal energy is unchanged, and the positive
-enthalpy change comes from $p\bar v$. Attractions introduce a negative
-internal-energy contribution; here $B-TB'<0$, reversing the enthalpy trend.
+\end{gather*}
+Rigid spheres: $B'=0$, so only $p\bar v$ raises enthalpy.
+Attractions lower internal energy; here $B-TB'<0$, reversing the enthalpy change.
 
 % L3 notes, PDF p.9 (printed p.33), Eqs. (125)--(126):
 % the virial expansion is a low-density expansion.
-At $200\ \mathrm{bar}$, however,
 \[
+p=200\ \mathrm{bar}:\qquad
 Z_{\rm RS}=2.0088,\qquad Z_{\rm attraction}=-0.21395.
 \]
-The rigid-sphere correction is not small, and the negative $Z$ in model (ii)
-is unphysical. These are formal results of the assigned truncation;
-model (ii) fails before the final pressure is reached.
+The rigid-sphere correction is not small and $Z<0$ is unphysical;
+these are formal truncated-model results, with model (ii) invalid at $200\ \mathrm{bar}$.

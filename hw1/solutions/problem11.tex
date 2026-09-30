@@ -1,18 +1,13 @@
-\section*{Problem 11 --- Solution}
-Subscripts 1 and 2 denote methane and argon, respectively; subscript 0 denotes
-an initial state. Treat both gases as ideal and calorically perfect, with the
-prescribed degrees of freedom. The outer vessel is rigid and insulated, with
-no shaft work or changes in endpoint bulk kinetic or potential energy.
-Neglect the partition's volume and heat capacity. Here $E$ and $S$ are totals,
-$V$ is volume, and $R_u=8.3144626~\mathrm{J/(mol\,K)}$.
+\section*{Problem 11}
+Ideal, calorically perfect gases; $1$: methane, $2$: argon, $0$: initial state.
+Neglect partition volume/heat capacity and changes in bulk kinetic/potential energy.
+$V=\text{constant}$, $Q_{\mathrm{ext}}=W_{\mathrm{ext}}=0$;
+$R_u=8.3144626~\mathrm{J/(mol\,K)}$.
 
 \partlabel{(a)}
-The partition is fixed: $V_{i,f}=V_{i,0}$. For the combined system,
-$Q_{\mathrm{ext}}=W_{\mathrm{ext}}=0$.
 % L1 notes PDF p.2: molar mass/basis definitions.
 % L2 notes PDF p.5 (printed p.20), Eq. (39): cv=(f/2)R.
-% Multiplication by molar mass gives cv_bar=(f/2)Ru.
-First calculate the amounts and the total heat capacities $C_i$ of the gas samples:
+% Multiply by molar mass for molar heat capacity; C_i is the total sample heat capacity.
 \begin{align*}
 n_1&=\frac{m_1}{M_1}=\frac{1}{0.0160425}=62.334424~\mathrm{mol},
 &n_2&=\frac{1}{0.039948}=25.032542~\mathrm{mol},\\
@@ -21,77 +16,58 @@ n_1&=\frac{m_1}{M_1}=\frac{1}{0.0160425}=62.334424~\mathrm{mol},
 C_1&=n_1(3R_u)=1554.831716~\mathrm{J/K},
 &C_2&=n_2\left(\frac32R_u\right)=312.198205~\mathrm{J/K}.
 \end{align*}
-% L1 notes PDF p.13, Eqs. (21), (24): closed-system first law.
-% L3 notes PDF p.1 (printed p.25), Eq. (74): CPG internal energy.
-The first law gives
+% L1 notes PDF p.13, Eqs. (21), (24), and L3 notes PDF p.1, Eq. (74).
 \begin{align*}
-\Delta E_1+\Delta E_2&=0,\\
+\Delta E_1+\Delta E_2&=Q_{\mathrm{ext}}-W_{\mathrm{ext}}=0,\\
 C_1(T_{f,a}-300)+C_2(T_{f,a}-600)&=0,\\
 T_{f,a}&=\frac{C_1(300)+C_2(600)}{C_1+C_2}
 =\boxed{350.164949~\mathrm{K}}.
 \end{align*}
-% L2 notes PDF p.9 (printed p.24), Eq. (69), multiplied by each gas mass.
-% Constant species mass converts the specific-volume ratio into a total-volume ratio.
-For each gas, the entropy change is
+% L2 notes PDF p.9 (printed p.24), Eq. (69), multiplied by species mass.
+% Fixed species masses convert v ratios to V ratios; Delta S_i is total entropy in J/K.
 \[
-\Delta S_i=C_i\ln\frac{T_{i,f}}{T_{i,0}}
-+n_iR_u\ln\frac{V_{i,f}}{V_{i,0}}.
+V_{i,f}=V_{i,0}
+\quad\Longrightarrow\quad
+\Delta S_{i,a}=C_i\ln\frac{T_{f,a}}{T_{i,0}}
++n_iR_u\underbrace{\ln\frac{V_{i,f}}{V_{i,0}}}_{0}
+=C_i\ln\frac{T_{f,a}}{T_{i,0}}.
 \]
-Since the compartment volumes are unchanged, $\ln(V_{i,f}/V_{i,0})=0$:
 \begin{align*}
 \Delta S_{1,a}&=1554.831716\ln\frac{350.164949}{300}
 =\boxed{+240.411~\mathrm{J/K}},\\
 \Delta S_{2,a}&=312.198205\ln\frac{350.164949}{600}
 =\boxed{-168.127~\mathrm{J/K}},\\
 \Delta S_a&=\Delta S_{1,a}+\Delta S_{2,a}
-=\boxed{72.2843~\mathrm{J/K}}>0.
+=\boxed{72.2843~\mathrm{J/K}}=S_{\mathrm{gen},a}>0.
 \end{align*}
-% L2 notes PDF p.2 (printed p.17), Eqs. (25)--(26): isolated-system entropy balance.
-The system is isolated, so $S_{\mathrm{gen},a}=\Delta S_a$.
-Heat transfer across a finite temperature difference is irreversible.
-The final temperature is closer to $300~\mathrm{K}$ because methane has the larger total heat capacity.
+% L2 notes PDF p.2, Eqs. (25)--(26): positive entropy generation => irreversible.
+Heat transfer across the temperature difference is irreversible.
 
-% L3 notes PDF p.1, Eq. (72): ideal-gas equation of state, applied at fixed n,V.
-The fixed partition can support unequal final pressures:
-\[
-p_{i,a}=p_{i,0}\frac{T_{f,a}}{T_{i,0}},\qquad
-p_{1,a}=1.16721650~\mathrm{bar},\qquad
-p_{2,a}=0.58360825~\mathrm{bar}.
-\]
-
-\newpage
 \partlabel{(b)}
-Return to the original initial states. The ideal-gas internal energies depend
-only on temperature, so removing the partition adds no energy-of-mixing term:
-% Same first law and CPG energy relation as (a); species internal energies are additive.
+Same original initial states; ideal gases have $E_i=E_i(T)$.
+% Same first law and CPG energy relation as (a); ideal-mixture energies are additive.
 \[
 C_1(T_{f,b}-300)+C_2(T_{f,b}-600)=0
 \quad\Longrightarrow\quad
 \boxed{T_{f,b}=T_{f,a}=350.164949~\mathrm{K}}.
 \]
-% L3 notes PDF p.1, Eq. (72), converted to pV=nRuT; sum volumes for the rigid vessel.
-From the initial ideal-gas states,
+% L3 notes PDF p.1, Eq. (72), converted to pV=nRuT.
 \begin{align*}
 V_{i,0}&=\frac{n_iR_uT_{i,0}}{p_{i,0}},\qquad p_{i,0}=10^5~\mathrm{Pa},\\
 V_{1,0}&=1.554831716~\mathrm{m^3},\qquad
 V_{2,0}=1.248792821~\mathrm{m^3},\\
-V&=V_{1,0}+V_{2,0}=2.803624536~\mathrm{m^3}.
-\end{align*}
-The final mixture pressure is
-\[
-p_f=\frac{(n_1+n_2)R_uT_{f,b}}{V}
+V&=V_{1,0}+V_{2,0}=2.803624536~\mathrm{m^3},\\
+p_f&=\frac{(n_1+n_2)R_uT_{f,b}}{V}
 =90726.52~\mathrm{Pa}
 =\boxed{0.907265~\mathrm{bar}}.
-\]
+\end{align*}
 % L2 notes PDF p.9, Eq. (69) + L4 notes PDF p.5 (printed p.46), Eq. (203).
-% Each ideal-gas species has access to the entire mixture volume V.
-Each species now occupies the entire vessel, so
+% Each species can occupy the entire final mixture volume.
 \[
-\Delta S_{i,b}
-=C_i\ln\frac{T_{f,b}}{T_{i,0}}+n_iR_u\ln\frac{V}{V_{i,0}}
-=\Delta S_{i,a}+n_iR_u\ln\frac{V}{V_{i,0}}.
+V_{i,f}=V,\quad T_{f,b}=T_{f,a}
+\quad\Longrightarrow\quad
+\Delta S_{i,b}=\Delta S_{i,a}+n_iR_u\ln\frac{V}{V_{i,0}}.
 \]
-Therefore,
 \begin{align*}
 \Delta S_{1,b}
 &=240.410961+(62.334424)(8.3144626)\ln\frac{2.803624536}{1.554831716}
@@ -102,18 +78,14 @@ Therefore,
 \Delta S_b&=\Delta S_{1,b}+\Delta S_{2,b}
 =\boxed{546.156~\mathrm{J/K}}=S_{\mathrm{gen},b}>0.
 \end{align*}
-Unrounded values are retained: argon's cooling and volume terms nearly cancel,
-but its net entropy change is positive.
+% Use unrounded intermediate values: the two argon entropy terms nearly cancel.
 
 \partlabel{(c)}
-% Subtract the total entropy changes obtained in (a) and (b).
-The additional entropy is
+% Partial attempt: do not restore the omitted mole-fraction/pressure decomposition.
 \[
 \Delta S_{\mathrm{extra}}=\Delta S_b-\Delta S_a
 \simeq 546.156-72.2843
 =\boxed{473.872~\mathrm{J/K}}.
 \]
-In (b), each gas can spread through the entire vessel, whereas in (a) it stays
-in its original compartment. I think this additional volume contribution is
-related to ideal-gas mixing. I have not yet worked out how to connect it to the
-usual mole-fraction expression for mixing entropy.
+Each gas gains access to the whole vessel. I think this is related to ideal-gas
+mixing, but I have not worked out the connection to the mole-fraction formula.

@@ -1,10 +1,13 @@
 % Sources: Homework1_AERO520.pdf, PDF p. 4, Problem 8.
 % The rendered assignment has the correct entropy-integral limits T_1 to T_2.
-\section*{Problem 8 --- Solution}
+\section*{Problem 8}
 
-Assume steady, isentropic flow of ideal nitrogen, with no heat transfer or shaft work,
-negligible elevation change, and $V_1\simeq0$. Here $V$ denotes flow speed,
-$h$ is mass-specific enthalpy, and a bar denotes a molar quantity.
+Steady ideal-gas flow; $V$: speed, $h$: mass-specific enthalpy,
+$M$: molar mass, bars: molar quantities.
+\[
+q=0,\qquad w_{\mathrm{shaft}}=0,\qquad \Delta s=0,\qquad
+\Delta z\simeq0,\qquad V_1\simeq0.
+\]
 \[
 T_1=1200\ \mathrm{K},\qquad \frac{p_2}{p_1}=\frac{1}{50},\qquad
 M=0.0280134\ \mathrm{kg/mol},\qquad
@@ -13,7 +16,7 @@ R_u=8.314462618\ \mathrm{J/(mol\,K)}.
 
 \partlabel{(a)}
 % Notes L3, PDF p. 1 / printed p. 25, Eq. (75): CPG isentropic relation.
-For the calorically perfect gas (CPG), $\gamma=1.40$ and $\Delta s=0$:
+\textbf{Calorically perfect gas (CPG):} $\gamma=1.40$.
 \[
 \frac{T_2}{T_1}=\left(\frac{p_2}{p_1}\right)^{(\gamma-1)/\gamma}
 \quad\Longrightarrow\quad
@@ -25,8 +28,7 @@ For the calorically perfect gas (CPG), $\gamma=1.40$ and $\Delta s=0$:
 % Notes L2, PDF p. 9 / printed p. 24, Eqs. (65)--(66), or
 % L3, PDF p. 2 / printed p. 26, Eqs. (77)--(78): ideal-gas entropy.
 % Multiply the notes' mass-specific relation by M to obtain the molar form.
-For the thermally perfect gas (TPG), $\bar c_p(T)=27.0+0.0040T$
-in $\mathrm{J/(mol\,K)}$. Since $\Delta\bar s=0$,
+\textbf{Thermally perfect gas (TPG):} $\bar c_p(T)=27.0+0.0040T$ in $\mathrm{J/(mol\,K)}$.
 \begin{align*}
 0&=\int_{T_1}^{T_2}\frac{\bar c_p(T)}{T}\,dT-R_u\ln\frac{p_2}{p_1},\\
 \int_{1200}^{T_2}\left(\frac{27.0}{T}+0.0040\right)dT
@@ -34,18 +36,15 @@ in $\mathrm{J/(mol\,K)}$. Since $\Delta\bar s=0$,
 27.0\ln\frac{T_2}{1200}+0.0040(T_2-1200)
 &=8.314462618\ln\frac{1}{50}.
 \end{align*}
-Solving with MATLAB \texttt{fzero} on $300<T_2<500\ \mathrm{K}$ gives
+MATLAB \texttt{fzero} on $[300,500]\ \mathrm{K}$:
 \[
-\boxed{T_{2,\mathrm{TPG}}=404.728\ \mathrm{K}}.
+\boxed{T_{2,\mathrm{TPG}}=404.728\ \mathrm{K}},\qquad 0<T_2<T_1.
 \]
-The left-hand side increases strictly for $T_2>0$, since its derivative is
-$27.0/T_2+0.0040>0$. Thus the root is unique and satisfies $0<T_2<T_1$.
 
 \partlabel{(c)}
 % Notes L2, PDF p. 9 / printed p. 24, Eq. (64): dh=cp(T)dT.
 % Notes L3, PDF p. 15 / printed p. 39, Eq. (174): h+u^2/2=h_0.
 % The homework uses V for the speed denoted u in the notes.
-For both models, the positive static enthalpy drop is
 \[
 h_1-h_2=\frac{1}{M}\int_{T_2}^{T_1}\bar c_p(T)\,dT,
 \qquad
@@ -73,13 +72,18 @@ h_1-h_2
 V_{2,\mathrm{TPG}}&=\sqrt{2(857.616\times10^3)}
 \simeq\boxed{1309.67\ \mathrm{m/s}}.
 \end{align*}
-In each speed calculation, the enthalpy drop is converted to $\mathrm{J/kg}$;
-$1\ \mathrm{J/kg}=1\ \mathrm{m^2/s^2}$.
 
 \partlabel{(d)}
-% Notes L3, PDF pp. 1--2 / printed pp. 25--26, Eqs. (72)--(78): CPG/TPG models.
-Both models assume an ideal gas and the same steady, adiabatic, isentropic nozzle flow.
-CPG uses constant heat capacities; TPG uses temperature-dependent heat capacities.
-The specified TPG law gives a higher exit temperature but a larger mean heat capacity
-over its expansion. Its enthalpy drop and exit speed are therefore slightly larger.
-Neither model includes intermolecular real-gas effects.
+% L3 notes PDF pp.1--2 (printed pp.25--26), Eqs. (72)--(78): CPG/TPG models.
+\begin{align*}
+\mathrm{CPG}:\quad &\bar c_p=\text{constant},\qquad \gamma=1.40,\\
+\mathrm{TPG}:\quad &\bar c_p=27.0+0.0040T,\qquad
+\gamma(T)=\frac{\bar c_p(T)}{\bar c_p(T)-R_u}.
+\end{align*}
+The heat-capacity model changes both $\int\bar c_p\,dT/T$ and $\int\bar c_p\,dT$:
+\begin{gather*}
+T_{2,\mathrm{TPG}}=404.728>392.429=T_{2,\mathrm{CPG}}\qquad[\mathrm K],\\
+(h_1-h_2)_{\mathrm{TPG}}=857.616>838.913=(h_1-h_2)_{\mathrm{CPG}}
+\qquad[\mathrm{kJ/kg}]\\
+\Longrightarrow\quad V_{2,\mathrm{TPG}}>V_{2,\mathrm{CPG}}.
+\end{gather*}
