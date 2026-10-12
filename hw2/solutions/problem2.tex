@@ -1,0 +1,125 @@
+\section*{Problem 2}
+
+\partlabel{(a)}
+Steady, constant-density flow; all fluxes and forces are per unit span.
+$\mathbf n$ points outward.
+% Unit 2 L5 notes, PDF p.5 (printed p.8), Eq. (36).
+\begin{align*}
+0&=\oint_{CS}\rho\mathbf u\cdot\mathbf n\,dA
+ =-\rho UH+\rho\int_0^H u(y)\,dy+\rho v_HL,\\
+\int_0^H u(y)\,dy
+&=\int_0^\delta\frac{Uy}{\delta}\,dy+\int_\delta^H U\,dy
+ =\frac{U\delta}{2}+U(H-\delta)
+ =U\left(H-\frac{\delta}{2}\right),\\
+v_HL&=UH-U\left(H-\frac{\delta}{2}\right)=\frac{U\delta}{2},\\
+v_H&=\frac{U\delta}{2L}
+ =\frac{30(1.20\times10^{-3})}{2(0.50)}
+ =\boxed{+0.0360~\mathrm{m/s}}.
+\end{align*}
+Since $v_H>0$, the top flow is outward, in the positive $y$ direction.
+
+\partlabel{(b)}
+Neglect streamwise body force and viscous tractions on the inlet, outlet,
+and top. Equal inlet/outlet pressures give zero net pressure force in $x$.
+$F'_{w\to f,x}$ denotes the wall force on the fluid per unit span.
+% Unit 2 L5 notes, PDF p.5, Eq. (37); stress traction is Eq. (12), PDF p.2.
+\begin{align*}
+F'_{w\to f,x}
+&=\oint_{CS}\rho u(\mathbf u\cdot\mathbf n)\,dA
+ =-\rho U^2H+\rho\int_0^H u^2(y)\,dy+\rho Uv_HL,\\
+\int_0^H u^2(y)\,dy
+&=\frac{U^2}{\delta^2}\int_0^\delta y^2\,dy+U^2(H-\delta)
+ =U^2\left(H-\frac{2\delta}{3}\right),\\
+F'_{w\to f,x}
+&=\rho U^2\left[-H+H-\frac{2\delta}{3}+\frac{\delta}{2}\right]
+ =-\frac{\rho U^2\delta}{6}\\
+&=-\frac{(1.20)(30)^2(1.20\times10^{-3})}{6}
+ =\boxed{-0.216~\mathrm{N/m}}.
+\end{align*}
+The top carries streamwise momentum $\rho Uv_HL=0.648~\mathrm{N/m}$.
+The wall force on the fluid is upstream. Its average shear magnitude is
+\[
+\boxed{\overline\tau_w=-\frac{F'_{w\to f,x}}{L}
+=\frac{0.216}{0.50}=0.432~\mathrm{Pa}}.
+\]
+The signed average wall traction on the fluid is $-0.432~\mathrm{Pa}$.
+
+\partlabel{(c)}
+% Unit 2 L5 notes, PDF pp.6--8: D and W definitions, Eqs. (47), (52)--(54).
+Use $(\nabla\mathbf u)_{ij}=\dfrac{\partial u_i}{\partial x_j}$:
+rows are velocity components and columns are coordinate directions.
+\begin{gather*}
+\frac{\partial u}{\partial x}=-\frac{v_H}{\delta}=-30~\mathrm{s^{-1}},\qquad
+\frac{\partial u}{\partial y}=\frac{U}{\delta}=25000~\mathrm{s^{-1}},\\
+\frac{\partial v}{\partial x}=0,\qquad
+\frac{\partial v}{\partial y}=\frac{v_H}{\delta}=30~\mathrm{s^{-1}},\\
+\boxed{\nabla\mathbf u=
+\begin{pmatrix}-30&25000&0\\0&30&0\\0&0&0\end{pmatrix}~\mathrm{s^{-1}}}.
+\end{gather*}
+\begin{gather*}
+\mathbf D=\frac12\left[\nabla\mathbf u+(\nabla\mathbf u)^T\right],\qquad
+\mathbf W=\frac12\left[\nabla\mathbf u-(\nabla\mathbf u)^T\right],\\
+\boxed{\mathbf D=
+\begin{pmatrix}-30&12500&0\\12500&30&0\\0&0&0\end{pmatrix}~\mathrm{s^{-1}}},\qquad
+\boxed{\mathbf W=
+\begin{pmatrix}0&12500&0\\-12500&0&0\\0&0&0\end{pmatrix}~\mathrm{s^{-1}}}.
+\end{gather*}
+\[
+\boxed{\nabla\cdot\mathbf u
+=\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}
++\frac{\partial w}{\partial z}=-30+30+0=0}.
+\]
+
+\partlabel{(d)}
+% Unit 2 L5 notes, PDF p.8 (printed p.11), Eqs. (58)--(59).
+\begin{gather*}
+\mathbf D'=\mathbf D-\frac13(\nabla\cdot\mathbf u)\mathbf I=\mathbf D,\\
+\boldsymbol\tau=2\mu\mathbf D'+\zeta(\nabla\cdot\mathbf u)\mathbf I
+=2\mu\mathbf D,\\
+\boxed{\boldsymbol\tau=
+\begin{pmatrix}
+-0.001080&0.4500&0\\
+0.4500&+0.001080&0\\
+0&0&0
+\end{pmatrix}~\mathrm{Pa}}.
+\end{gather*}
+The nonzero stresses are $\tau_{xx}$, $\tau_{yy}$, and $\tau_{xy}=\tau_{yx}$.
+The bulk term vanishes because $\nabla\cdot\mathbf u=0$.
+
+\partlabel{(e)}
+% Unit 2 L6 notes, PDF p.4 (printed p.18), Eqs. (104), (107).
+\begin{align*}
+\Phi&=\boldsymbol\tau:\nabla\mathbf u
+ =\sum_{i,j}\tau_{ij}\frac{\partial u_i}{\partial x_j}\\
+&=\tau_{xx}\frac{\partial u}{\partial x}
+ +\tau_{xy}\frac{\partial u}{\partial y}
+ +\tau_{yx}\frac{\partial v}{\partial x}
+ +\tau_{yy}\frac{\partial v}{\partial y}\\
+&=(-0.001080)(-30)+(0.4500)(25000)
+ +(0.4500)(0)+(0.001080)(30)\\
+&=\mu\left(\frac{U}{\delta}\right)^2
+ +4\mu\left(\frac{v_H}{\delta}\right)^2
+ \simeq\boxed{1.125\times10^4~\mathrm{W/m^3}}.
+\end{align*}
+\[
+\boxed{\dot s_{\mathrm{gen}}=\frac{\Phi}{T}
+=\frac{11250.0648}{300}
+\simeq37.50~\mathrm{W/(m^3\,K)}}.
+\]
+This is viscous entropy production per unit volume.
+
+\partlabel{(f)}
+% Unit 2 L6 notes, PDF p.4, Eq. (108); specialize the stress in part (d).
+\begin{align*}
+\tau_{w,\mathrm{local}}
+&\approx\mu\left(\frac{\partial u}{\partial y}
+ +\frac{\partial v}{\partial x}\right)_{x=L,y=0}
+ =\frac{\mu U}{\delta}
+ =\boxed{0.450~\mathrm{Pa}},\\
+\frac{\tau_{w,\mathrm{local}}-\overline\tau_w}{\overline\tau_w}\times100\%
+&=\frac{0.450-0.432}{0.432}\times100\%
+ =\boxed{4.17\%}.
+\end{align*}
+The gradient estimate is local at the outlet; $\overline\tau_w$ is averaged
+over the plate. The velocity profiles are approximate, so exact agreement is
+not expected.

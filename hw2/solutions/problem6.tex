@@ -1,0 +1,86 @@
+\section*{Problem 6}
+Stationary, one-dimensional adiabatic shock; no shaft work or elevation change.
+$\alpha$ is the prescribed atomic-oxygen mass fraction. Component heat capacities
+are constant; enthalpies and gas constants are mass-specific.
+
+\partlabel{(a)}
+Upstream density:
+\[
+\rho_1=\frac{p_1}{R_{\mathrm{O_2}}T_1}
+=\frac{10^4}{(259.84)(300)}
+=0.128284~\mathrm{kg/m^3}.
+\]
+% Lecture 9 organized notes, PDF p.1, Eqs. (1)--(4).
+% HW2 PDF pp.3--4: neglect upstream pressure and enthalpy in the jump equations.
+With $r=\rho_2/\rho_1$,
+\begin{align*}
+\rho_1u_1&=\rho_2u_2
+\quad\Longrightarrow\quad u_2=\frac{u_1}{r},\\
+p_2&=p_1+\rho_1u_1^2-\rho_2u_2^2
+=p_1+\rho_1u_1^2\left(1-\frac1r\right)\\
+&\simeq\boxed{\rho_1u_1^2\left(1-\frac1r\right)}
+\qquad (p_1\ll\rho_1u_1^2).
+\end{align*}
+\[
+p_2=\rho_2R_2T_2
+\quad\Longrightarrow\quad
+T_2=\frac{p_2}{r\rho_1R_2}
+\simeq\boxed{\frac{u_1^2(r-1)}{r^2R_2}}.
+\]
+
+\partlabel{(b)}
+% HW2 PDF p.4: specified mass-fraction mixing rules and dissociation energy.
+\begin{align*}
+R_2&=(1-\alpha)R_{\mathrm{O_2}}+\alpha(2R_{\mathrm{O_2}})
+=R_{\mathrm{O_2}}(1+\alpha),\\
+c_{p,2}&=(1-\alpha)\frac72R_{\mathrm{O_2}}
++\alpha\frac52(2R_{\mathrm{O_2}})
+=R_{\mathrm{O_2}}\left(\frac72+\frac32\alpha\right),\\
+C&\equiv\frac{c_{p,2}}{R_2}
+=\frac{3.5+1.5\alpha}{1+\alpha},\qquad
+\beta\equiv\frac{\alpha Q_d}{u_1^2}.
+\end{align*}
+Energy conservation, with $h_1\ll u_1^2/2$:
+\[
+h_1+\frac{u_1^2}{2}=h_2+\frac{u_2^2}{2}
+\quad\Longrightarrow\quad
+\frac{u_1^2}{2}\simeq c_{p,2}T_2+\alpha Q_d+\frac{u_1^2}{2r^2}.
+\]
+Substituting $T_2$ from (a) and dividing by $u_1^2$,
+\[
+\frac12=C\frac{r-1}{r^2}+\beta+\frac{1}{2r^2}
+\quad\Longrightarrow\quad
+r^2=2C(r-1)+2\beta r^2+1,
+\]
+\[
+\boxed{(1-2\beta)r^2-2Cr+(2C-1)=0.}
+\]
+Select the compression root $r>1$:
+\[
+\boxed{r=\frac{C+\sqrt{C^2-(1-2\beta)(2C-1)}}{1-2\beta}.}
+\]
+
+\partlabel{(c)}
+Using $u_1=5000~\mathrm{m/s}$ and $Q_d=15.6\times10^6~\mathrm{J/kg}$,
+\[
+\beta=0.624\alpha,\qquad
+R_2=259.84(1+\alpha)~\mathrm{J/(kg\,K)}.
+\]
+\begin{center}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{c r r r r}
+\hline
+$\alpha$ & $\beta$ & $r$ & $T_2~(\mathrm K)$ & $p_2~(\mathrm{MPa})$ \\
+\hline
+0.00 & 0.0000 & 6.0000 & 13362.9 & 2.6726 \\
+0.10 & 0.0624 & 6.6081 & 11233.2 & 2.7218 \\
+0.20 & 0.1248 & 7.4912 &  9274.2 & 2.7790 \\
+0.30 & 0.1872 & 8.7906 &  7461.5 & 2.8423 \\
+\hline
+\end{tabular}
+\end{center}
+
+\partlabel{(d)}
+As $\alpha$ increases, more energy is stored in $\alpha Q_d$, leaving less for
+$c_{p,2}T_2$, so $T_2$ decreases. The table also shows greater compression
+($r$ increases) and therefore lower downstream speed, $u_2=u_1/r$.

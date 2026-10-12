@@ -1,0 +1,96 @@
+\section*{Problem 4}
+
+Steady, adiabatic ideal-gas flow with constant heat capacities and no shaft work.
+Neglect elevation change, heat conduction, and viscous work across the station faces.
+$h,s,c_p$ are mass-specific; $V$ is speed.
+
+\partlabel{(a)}
+$c_p-c_v=R$, $\gamma=c_p/c_v$.
+% L2 notes PDF p.6 (printed p.21), Eq. (40): cp-cv=R and gamma=cp/cv.
+% L9 notes PDF p.2 (printed p.3), Section 3: a^2=gamma*R*T.
+\begin{align*}
+c_p&=\frac{\gamma R}{\gamma-1}
+=\frac{1.4(287)}{0.4}=1004.5~\mathrm{J/(kg\,K)},\\
+V_1&=M_1\sqrt{\gamma RT_1}
+=0.80\sqrt{1.4(287)(300)}
+=\boxed{277.75~\mathrm{m/s}}.
+\end{align*}
+% L5 notes PDF p.5 (printed p.8), Eq. (38): steady control-volume energy.
+% L7 notes PDF p.2 (printed p.22), Eqs. (139)--(143): stagnation quantities.
+% Guide L7 PDF pp.12--13, Sections 3.4--3.5: the energy balance also permits
+% irreversible flow under the stated station and control-volume assumptions.
+\[
+h_1+\frac{V_1^2}{2}=h_2+\frac{V_2^2}{2}=h_0,
+\qquad c_p(T_0-T)=\frac{V^2}{2}.
+\]
+\begin{align*}
+T_0&=T_1+\frac{V_1^2}{2c_p}
+=300\left[1+\frac{1.4-1}{2}(0.80)^2\right]
+=\boxed{338.400~\mathrm{K}},\\
+T_2&=T_0-\frac{V_2^2}{2c_p}
+=338.4-\frac{100^2}{2(1004.5)}
+=\boxed{333.422~\mathrm{K}}.
+\end{align*}
+
+\partlabel{(b)}
+\textbf{Case A:} $s_2-s_1=0$.
+% L2 notes PDF p.9 (printed p.24), Eq. (68): CPG entropy change.
+\begin{align*}
+s_2-s_1&=c_p\ln\frac{T_2}{T_1}-R\ln\frac{p_2}{p_1}=0,\\
+p_{2,A}&=p_1\left(\frac{T_2}{T_1}\right)^{\gamma/(\gamma-1)}
+=100\left(\frac{333.4224}{300}\right)^{3.5}
+=\boxed{144.730~\mathrm{kPa}}.
+\end{align*}
+The stagnation state $0,i$ is defined by isentropic deceleration to rest:
+% Derived from the same entropy formula; L7 guide PDF pp.14--15, Section 3.8.
+\[
+s_{0,i}=s_i\quad\Longrightarrow\quad
+p_{0,i}=p_i\left(\frac{T_{0,i}}{T_i}\right)^{\gamma/(\gamma-1)}.
+\]
+\[
+p_{0,1}=100\left(\frac{338.4}{300}\right)^{3.5}
+=\boxed{152.434~\mathrm{kPa}},\qquad
+\boxed{p_{0,2,A}=p_{0,1}=152.434~\mathrm{kPa}}.
+\]
+
+\partlabel{(c)}
+\textbf{Case B:} $\displaystyle\frac{s_2-s_1}{R}=1$;
+$T_0$ and $T_2$ are unchanged.
+% L2 notes PDF p.9, Eq. (68), rearranged without assuming ds=0.
+\begin{align*}
+\ln\frac{p_{2,B}}{p_1}
+&=\frac{c_p}{R}\ln\frac{T_2}{T_1}-\frac{s_2-s_1}{R}
+=3.5\ln\frac{T_2}{T_1}-1,\\
+p_{2,B}&=p_1\left(\frac{T_2}{T_1}\right)^{\gamma/(\gamma-1)}e^{-1}
+=p_{2,A}e^{-1}
+=\boxed{53.2430~\mathrm{kPa}},\\
+p_{0,2,B}&=p_{2,B}\left(\frac{T_0}{T_2}\right)^{3.5}
+=\boxed{56.0773~\mathrm{kPa}}.
+\end{align*}
+The specified entropy increase gives $p_{2,B}<p_1$ despite $V_2<V_1$.
+
+\partlabel{(d)}
+% L2 notes PDF p.9, Eq. (68), applied between stagnation reference states.
+% L9 notes PDF p.4 (printed p.5), Eq. (26), states the resulting pressure ratio.
+\begin{gather*}
+s_{0,2}-s_{0,1}=s_2-s_1,\qquad
+h_{0,2}=h_{0,1}\quad\Longrightarrow\quad T_{0,2}=T_{0,1},\\
+s_2-s_1=c_p\ln\frac{T_{0,2}}{T_{0,1}}
+-R\ln\frac{p_{0,2}}{p_{0,1}}
+=-R\ln\frac{p_{0,2}}{p_{0,1}},\\
+\boxed{\frac{p_{0,2}}{p_{0,1}}
+=\exp\left[-\frac{s_2-s_1}{R}\right]}.
+\end{gather*}
+
+\partlabel{(e)}
+\begin{center}
+\begin{tabular}{lcc}
+\hline
+Quantity & Case A & Case B \\
+\hline
+$h_0$ & Constant & Constant \\
+$s$ & Constant & Increases: $s_2-s_1=287~\mathrm{J/(kg\,K)}$ \\
+$p_0$ & Constant & Decreases: $p_{0,2}/p_{0,1}=e^{-1}=0.367879$ \\
+\hline
+\end{tabular}
+\end{center}

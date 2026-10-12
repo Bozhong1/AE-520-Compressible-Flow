@@ -6,7 +6,7 @@ Problem 1 follows the student's supplied handwritten sequence, with work-sign an
 
 ## Project files
 
-- `hw1.tex`: HW1 document. The repository-root `main.tex` imports it for Overleaf; use pdfLaTeX.
+- `hw1.tex`: HW1 document. To compile it in Overleaf, set the import in the repository-root `main.tex` to `\import{hw1/}{hw1.tex}`; use pdfLaTeX.
 - `solutions/problem1.tex`, `problem5.tex`, `problem7.tex`, `problem8.tex`, `problem11.tex`: one editable file per problem.
 - `preview/Boyang Chen AE 520 HW1 - Solutions.pdf`: compiled document.
 - `matlab/HW1_Problem7.m`, `matlab/HW1_Problem8.m`, and `matlab/HW1_Problem11.m`: separate standalone numerical checks, verified with MATLAB R2024b.
@@ -23,7 +23,7 @@ cd hw1
 tectonic hw1.tex
 ```
 
-In Overleaf, keep the repository-root `main.tex` selected as the main document. It imports `hw1/hw1.tex`, so the solution and template paths remain relative to this folder. For an existing GitHub-linked project, open **Integrations > GitHub** and pull the new changes. Otherwise, create a project with **New Project > Import from GitHub**. Synchronization requires an eligible plan and is manual. See [Overleaf's GitHub synchronization documentation](https://docs.overleaf.com/integrations-and-add-ons/git-integration-and-github-synchronization/github-synchronization).
+In Overleaf, keep the repository-root `main.tex` selected as the main document. Its current import selects the latest homework; change it to `\import{hw1/}{hw1.tex}` to compile this document. For an existing GitHub-linked project, open **Integrations > GitHub** and pull the new changes. Otherwise, create a project with **New Project > Import from GitHub**. Synchronization requires an eligible plan and is manual. See [Overleaf's GitHub synchronization documentation](https://docs.overleaf.com/integrations-and-add-ons/git-integration-and-github-synchronization/github-synchronization).
 
 ## Template
 
