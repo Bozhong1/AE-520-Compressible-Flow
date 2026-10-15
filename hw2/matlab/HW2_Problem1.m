@@ -14,7 +14,7 @@ radialSpeed = Q/(4*pi*Rc^2);
 M0 = rhoOutside*Vc + (rhoInside-rhoOutside)*V0;
 massSlope = (rhoInside-rhoOutside)*Q;
 Mfinal = rhoInside*Vc;
-fprintf('Rdot at R = Rc: %.10f m/s\n',radialSpeed);
+fprintf('dR/dt at R = Rc: %.10f m/s\n',radialSpeed);
 fprintf('Time to reach Rc: %.10f s\n',tHit);
 fprintf('M(0): %.11f kg; M(tHit): %.11f kg\n',M0,Mfinal);
 fprintf('dM/dt before contact: %.10f kg/s\n',massSlope);
