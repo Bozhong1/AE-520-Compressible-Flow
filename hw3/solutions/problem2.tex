@@ -1,36 +1,32 @@
 \section*{Problem 2}
 
-Steady quasi-one-dimensional flow of calorically perfect air, $\gamma=1.4$ and
-$R=287~\mathrm{J/(kg\,K)}$. The nozzle is adiabatic, with no shaft work or elevation change,
-and isentropic except at the normal shock.
-Stations $1s$ and $2s$ are immediately upstream and downstream of the shock; $e$ denotes the exit.
+Steady, adiabatic, quasi-one-dimensional flow; isentropic except at the normal shock.
+$1s$: before shock; $2s$: after shock; $e$: exit.
+\[
+\gamma=1.4,\qquad R=287~\mathrm{J/(kg\,K)},\qquad p=\rho RT,\qquad h=c_pT.
+\]
 \[
 \frac{A_e}{A_t}=6,\qquad \frac{A_s}{A_t}=3,\qquad
 p_{0,1}=800~\mathrm{kPa},\qquad T_{0,1}=600~\mathrm{K}.
 \]
 
 \partlabel{(a)}
-The choked throat gives $A_1^*=A_t$.
-Using the area--Mach function $F(M)=A/A^*$ from Problem 1,
+$A_1^*=A_t$; $F(M)=A/A^*$ as in Problem 1.
 % L12 notes PDF p.1 Eq. (228); p.2 Eq. (233); p.3 Eq. (240).
 \[
 F(M_{1s})=\frac{A_s}{A_1^*}=\frac{A_s}{A_t}=3,
 \qquad M_{1s}>1
 \quad\Longrightarrow\quad \boxed{M_{1s}=2.637416}.
 \]
-Area--Mach roots are computed by bisection to an interval width below
-$10^{-12}$: $[1,10]$ for the supersonic branch and
-$[10^{-7},1]$ for the subsonic branch.
+% Bisection: interval width < 1e-12; supersonic [1,10], subsonic [1e-7,1].
 
 \partlabel{(b)}
-The normal-shock mass, momentum, and energy balances are
 % L9 notes PDF p.1, Eqs. (1)--(4).
 \[
 \rho_{1s}u_{1s}=\rho_{2s}u_{2s},\quad
 p_{1s}+\rho_{1s}u_{1s}^2=p_{2s}+\rho_{2s}u_{2s}^2,\quad
 h_{1s}+\frac{u_{1s}^2}{2}=h_{2s}+\frac{u_{2s}^2}{2}.
 \]
-With $p=\rho RT$ and $h=c_pT$, the downstream Mach number is
 % L9 notes PDF p.3, Eq. (21).
 \[
 M_{2s}=\left[\frac{1+\frac{\gamma-1}{2}M_{1s}^2}
@@ -38,7 +34,7 @@ M_{2s}=\left[\frac{1+\frac{\gamma-1}{2}M_{1s}^2}
 =\left[\frac{1+0.2(2.637416)^2}{1.4(2.637416)^2-0.2}\right]^{1/2}
 =\boxed{0.500692}.
 \]
-Define the stagnation-pressure recovery across a normal shock with upstream Mach number $M$:
+Normal-shock stagnation-pressure ratio:
 % L9 notes PDF p.4, Eq. (27); also L12 notes PDF p.5, Eq. (256).
 \[
 \Pi(M)\equiv\frac{p_{0,2}}{p_{0,1}}
@@ -49,9 +45,10 @@ Define the stagnation-pressure recovery across a normal shock with upstream Mach
 \frac{p_{0,2}}{p_{0,1}}=\Pi(2.637416)=\boxed{0.446174},\qquad
 p_{0,2}=800(0.446173792)=\boxed{356.939~\mathrm{kPa}}.
 \]
-The shock preserves $T_0=600~\mathrm{K}$ and reduces $p_0$.
+$T_{0,2}=T_{0,1}=600~\mathrm{K}$.
 
 \partlabel{(c)}
+$A_2^*$: downstream sonic reference area.
 % L12 notes PDF p.5, Eq. (251); p.4 Eq. (244) and p.6 Eq. (260).
 \begin{gather*}
 \dot m=\frac{p_0A^*}{\sqrt{T_0}}\sqrt{\frac{\gamma}{R}}
@@ -61,10 +58,8 @@ The shock preserves $T_0=600~\mathrm{K}$ and reduces $p_0$.
 \frac{A_2^*}{A_t}=\frac{p_{0,1}}{p_{0,2}}
 =\frac{800}{356.939034}=\boxed{2.241279}.
 \end{gather*}
-$A_2^*$ is the downstream sonic reference area, not the geometric nozzle throat.
 
 \partlabel{(d)}
-The flow remains subsonic downstream of the shock.
 % L12 notes PDF p.4, Eqs. (245)--(246).
 \[
 F(M_e)=\frac{A_e}{A_2^*}
@@ -86,8 +81,7 @@ p_b&=p_e=\boxed{344.822~\mathrm{kPa}}.
 \end{align*}
 
 \partlabel{(e)}
-For the new back pressure, $p_e=p_b=200~\mathrm{kPa}$.
-Continuity between the choked upstream throat and the exit gives
+$p_e=p_b=200~\mathrm{kPa}$.
 % Derived from L12 notes PDF p.5 Eq. (251) and p.1 Eq. (223),
 % using rho_e=p_b/(R T_e), u_e=M_e sqrt(gamma R T_e), and
 % T_e=T01/[1+(gamma-1)M_e^2/2] (L10 PDF p.8 Eq. (101)).
@@ -101,7 +95,7 @@ M_e\sqrt{1+\frac{\gamma-1}{2}M_e^2}
 =\frac{800}{200}\frac{1}{6}\left(\frac{2}{2.4}\right)^3
 =0.385802469.
 \end{gather*}
-Set $y=M_e^2$; the positive root is
+$y=M_e^2>0$:
 \[
 0.2y^2+y-(0.385802469)^2=0,
 \qquad y=0.144658338
@@ -114,24 +108,21 @@ p_{0,e}=p_{0,2}&=p_b(1+0.2M_e^2)^{3.5}
 =\boxed{220.995~\mathrm{kPa}},\\
 \Pi(M_{1s})&=\frac{p_{0,2}}{p_{0,1}}
 =\frac{220.995212}{800}=0.276244015
-\quad\Longrightarrow\quad M_{1s}=3.199936,\\
+\quad\xrightarrow{M_{1s}>1}\quad M_{1s}=3.199936,\\
 \frac{A_s}{A_t}&=F(M_{1s})=F(3.199935556)=\boxed{5.120645}.
 \end{align*}
-The shock-recovery equation is solved by bisection on
-$[1,F^{-1}_{\mathrm{sup}}(6)]$, whose upper endpoint is approximately $3.367872$.
-The result satisfies $1<A_s/A_t<6$ and $M_e<1$.
-Lowering $p_b$ moves the shock downstream, where its upstream Mach number is higher.
+% Shock-recovery solve: bisection on [1,F_sup^{-1}(6)] = [1,3.367872...].
+$1<A_s/A_t=5.120645<6,\quad 0<M_e=0.380340<1$.
 
 \partlabel{(f)}
-With the shock outside the nozzle, the internal supersonic exit branch satisfies
+Shock outside the nozzle:
 % L12 notes PDF p.4, Eqs. (247)--(250); L8 notes PDF p.5 Eq. (202).
 \[
 F(M_e)=6,\quad M_e>1
 \quad\Longrightarrow\quad M_e=3.367872,\qquad
 p_e=\frac{800}{[1+0.2(3.367872)^2]^{3.5}}=12.6726~\mathrm{kPa}.
 \]
-At a supersonic exit, both small-disturbance velocities $u-a$ and $u+a$ point downstream,
-so the back pressure cannot be imposed upstream through the exit.
-The jet adjusts outside the nozzle: compression waves or shocks for $p_e<p_b$
-(overexpanded), and expansion waves for $p_e>p_b$ (underexpanded).
-Therefore a supersonic exit can have $p_e\ne p_b$.
+$u-a>0$ and $u+a>0$: disturbances travel downstream, so the back pressure
+cannot propagate upstream through the supersonic exit.
+The jet adjusts externally by compression waves or shocks if $p_e<p_b$,
+or expansion waves if $p_e>p_b$; thus $p_e\ne p_b$ is possible.

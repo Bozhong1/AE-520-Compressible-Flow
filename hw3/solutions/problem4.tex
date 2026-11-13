@@ -1,16 +1,13 @@
 \section*{Problem 4}
 
-Steady flow with fixed captured mass flow and upstream stagnation state;
-the shock is adiabatic, and all other unheated sections are isentropic.
-Interpret the heating immediately upstream of the second throat as a short
-constant-area section at $A_{t,2}$, initially entered at $M=0.80$; the diagram's
-$M=0.40$ station is in the wider diffuser.
-$q>0$ is heat added per unit gas mass, and $c_p=1004.5~\mathrm{J/(kg\,K)}$.
+Steady flow with fixed $\dot m$ and upstream stagnation state; unheated flow is
+isentropic except at the shock. Heating: constant area $A_{t,2}$, negligible friction,
+initial $M_{\mathrm{in}}=0.80$.
+$q>0$: heat added per unit mass; $c_p=1004.5~\mathrm{J/(kg\,K)}$.
 
 % HW3 PDF p.3: incomplete introductory sentence; diagram identifies the stations.
 % L12 notes PDF p.1, Eq. (228). Unlike L13 Eq. (304), this first throat is not sonic.
-Let $A_u^*$ and $A_d^*$ be the sonic reference areas before and after the shock,
-with $A_d^*$ evaluated before heating. The first physical throat is not sonic:
+$A_u^*,A_d^*$: sonic reference areas before and after the shock, before heating.
 \[
 \frac{A_{t,1}}{A_u^*}=F(1.20)=1.03043975>1,
 \qquad A_{t,1}\ne A_u^*.
@@ -19,14 +16,12 @@ with $A_d^*$ evaluated before heating. The first physical throat is not sonic:
 \partlabel{(a)}
 % L10 notes PDF p.2, Eqs. (47)--(49): Rayleigh balances.
 % PDF p.8, Eq. (104), and p.9, Eq. (108): sonic temperature and heat.
-For constant-area heating with negligible friction,
 \[
 \rho u=\text{constant},\qquad p+\rho u^2=\text{constant},\qquad
 q=h_{0,\mathrm{out}}-h_{0,\mathrm{in}}
 =c_p(T_{0,\mathrm{out}}-T_{0,\mathrm{in}}).
 \]
-The shock and unheated sections preserve $T_0$, so
-$T_{0,\mathrm{in}}=700~\mathrm K$. At thermal choking, $M_{\mathrm{out}}=1$:
+$T_{0,\mathrm{in}}=700~\mathrm K$; choking: $M_{\mathrm{out}}=1$, $T_{0,\mathrm{out}}=T_0^*$.
 \begin{align*}
 \frac{T_{0,\mathrm{in}}}{T_0^*}
 &=\frac{2(\gamma+1)M_{\mathrm{in}}^2
@@ -38,12 +33,10 @@ T_0^*&=\frac{700}{0.963948085}=726.180186~\mathrm K,\\
 q_a&=1004.5(726.180186-700)=26297.997~\mathrm{J/kg}
 =\boxed{26.2980~\mathrm{kJ/kg}}.
 \end{align*}
-Here $T_0^*$ belongs to the sonic state on this Rayleigh line.
 
 \partlabel{(b)}
 % L12 notes PDF p.1, Eq. (228); L13 PDF p.6, Eqs. (315)--(319).
-With no heating and the original shock fixed, $A_d^*$ is unchanged.
-Write $A_{t,2}^{\mathrm{orig}}$ for the original second-throat area:
+$q=0$, fixed shock at $M_{1s}=1.50$: $A_d^*=\mathrm{const.}$
 \begin{gather*}
 A_{t,2}^{\mathrm{orig}}=F(0.80)A_d^*,\qquad F(0.80)=1.03823000,\\
 A_{t,2}^{\mathrm{choked}}=A_d^*
@@ -58,13 +51,13 @@ A_{t,2}^{\mathrm{choked}}=A_d^*
 % L9 notes PDF p.4, Eq. (27): Pi(M).
 % L13 notes PDF p.6, Eq. (311): downstream critical area.
 % PDF pp.7--8, Eqs. (330)--(333): shock adjustment after thermal choking.
-Use the shock pressure-recovery function $\Pi(M)$ defined in Problem 2:
+$\Pi(M)$ as in Problem 2:
 \[
 \Pi(1.50)=0.929786512,\qquad \Pi(1.20)=0.992798398.
 \]
-For fixed $\dot m$ and the unchanged pre-heating $T_0$, $A_d^*=A_u^*/\Pi$.
-The subsonic area--Mach root below is found by bisection
-on $[10^{-7},1]$:
+% Fixed mass flow and pre-heating T0 give A_d^* = A_u^*/Pi.
+% Subsonic area-Mach root: bisection on [1e-7,1].
+$M_{1s,\mathrm{lim}}=1.20$; $M_{\mathrm{pre}}$: Mach number immediately before heating.
 \begin{align*}
 A_{t,2}^{\mathrm{orig}}
 &=F(0.80)\frac{A_u^*}{\Pi(1.50)},\qquad
@@ -73,11 +66,10 @@ F(M_{\mathrm{pre}})
 &=\frac{A_{t,2}^{\mathrm{orig}}}{A_{d,\mathrm{lim}}^*}
 =F(0.80)\frac{\Pi(1.20)}{\Pi(1.50)}\\
 &=(1.03823000)\frac{0.992798398}{0.929786512}=1.10859113,\\
-M_{\mathrm{pre}}<1&\quad\Longrightarrow\quad
+0<M_{\mathrm{pre}}<1&\quad\Longrightarrow\quad
 \boxed{M_{\mathrm{pre}}=0.681329}.
 \end{align*}
 % L10 notes PDF p.8, Eq. (104), and p.9, Eq. (108).
-Apply the Rayleigh relation in (a) to this new pre-heating state:
 \begin{align*}
 \frac{700}{T_{0,\mathrm{lim}}^*}
 &=\frac{2(2.4)(0.681328779)^2[1+0.2(0.681328779)^2]}
@@ -86,17 +78,12 @@ T_{0,\mathrm{lim}}^*&=\frac{700}{0.894541958}=782.523384~\mathrm K,\\
 q_{\max}&=1004.5(782.523384-700)=82894.739~\mathrm{J/kg}
 =\boxed{82.8947~\mathrm{kJ/kg}}.
 \end{align*}
-This is the total heat from the unheated state. The additional heat beyond (a)
-is $q_{\max}-q_a=56.5967~\mathrm{kJ/kg}$.
-The weaker shock preserves more stagnation pressure, reducing the pre-heating
-Mach number at the fixed second-throat area and increasing the heat addition
-compatible with a sonic second throat.
+Additional heat beyond (a): $q_{\max}-q_a=56.5967~\mathrm{kJ/kg}$.
 
 \partlabel{(d)}
 % L12 notes PDF p.1, Eq. (228), and PDF p.4, Eq. (244).
 % Combine the original geometry with the weaker-shock critical area, without heating.
-With $q=0$, choking at the limiting shock position requires
-$A_{t,2}^{\mathrm{lim}}=A_{d,\mathrm{lim}}^*$:
+$q=0$, $M_{1s,\mathrm{lim}}=1.20$, $A_{t,2}^{\mathrm{lim}}=A_{d,\mathrm{lim}}^*$:
 \begin{align*}
 \frac{A_{t,2}^{\mathrm{lim}}}{A_{t,2}^{\mathrm{orig}}}
 &=\frac{A_u^*/\Pi(1.20)}{F(0.80)A_u^*/\Pi(1.50)}
@@ -106,6 +93,3 @@ $A_{t,2}^{\mathrm{lim}}=A_{d,\mathrm{lim}}^*$:
 {A_{t,2}^{\mathrm{orig}}}
 &=1-0.902045824=\boxed{9.79542\%}.
 \end{align*}
-This total reduction is relative to the original geometry. It exceeds the
-$3.68223\%$ required for first choking because the further reduction moves
-the shock upstream to the first constriction.

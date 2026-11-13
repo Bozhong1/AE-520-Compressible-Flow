@@ -1,6 +1,6 @@
 # AE 520 -- Homework 3
 
-Complete solutions to Problems 1-4. The presentation follows the equation-first sequence in the earlier homework and handwritten midterm: state the applicable model, write the governing relation, show the key substitutions or cancellations, and box the requested result. Short explanations identify physical assumptions, admissible Mach-number branches, and choking conditions.
+Complete solutions to Problems 1-4. Problems 2-4 follow the concise formula-based presentation of the student's revised Problem 1: governing equations, key substitutions or cancellations, and boxed results. Prose is limited to necessary assumptions, notation, and requested physical explanations. Numerical solver details and lecture references remain in the LaTeX comments.
 
 The main course material is **Lectures 9-13**: normal shocks, Rayleigh flow, Fanno flow, nozzle flow, and inlet starting. Thermodynamic and stagnation-state relations are used as prerequisites. Exact lecture-note PDF-page and equation references are retained in comments beside the LaTeX calculations. The separate guided solution remains in the local course folder.
 
@@ -49,7 +49,7 @@ All four MATLAB files passed MATLAB R2024b's static analyzer with no diagnostics
 
 ## PDF generation
 
-The supplied PDF was generated from the current solution files using their literal LaTeX mathematical expressions, rendered by KaTeX and headless Chrome. All 151 mathematical expressions passed rendering checks. The original LaTeX document remains available for Overleaf. A native LaTeX build could not be completed in this session because Tectonic's required resource bundle was unavailable locally and could not be downloaded.
+The supplied PDF was generated from the current solution files using their literal LaTeX mathematical expressions, rendered by KaTeX and headless Chrome. All 114 mathematical expressions passed rendering checks. The original LaTeX document remains available for Overleaf. A native LaTeX build could not be completed in this session because Tectonic's required resource bundle was unavailable locally and could not be downloaded.
 
 The PDF follows the existing homework format: 11-point serif text, half-inch margins, numbered pages, and a new page for each problem. The renderer preserves the problem order, all 19 outer subparts, the diagram, and the AI-assistance acknowledgment.
 
