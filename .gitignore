@@ -12,3 +12,4 @@
 /hw3/hw3.pdf
 __pycache__/
 *.pyc
+/hw3/node/node_modules/
