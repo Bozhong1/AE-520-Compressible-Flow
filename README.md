@@ -2,6 +2,10 @@
 
 ## Homework
 
+- [HW3](hw3/README.md): complete solutions for Problems 1-4, with a Mollier diagram and numerical calculations.
+- [HW3 PDF](hw3/preview/Boyang_Chen_AE520_HW3.pdf)
+- [HW3 LaTeX](hw3/hw3.tex)
+- [HW3 separate MATLAB files](hw3/matlab/)
 - [HW2](hw2/README.md): solutions for Problems 1, 2, and 4, plus a concise attempt at advanced Problem 6.
 - [HW2 PDF](<hw2/preview/Boyang Chen AE 520 HW2 - Solutions.pdf>)
 - [HW2 LaTeX](hw2/hw2.tex)
@@ -15,7 +19,7 @@ Each homework has its own folder, solution files, MATLAB scripts, and template d
 
 ## Overleaf
 
-Keep the root `main.tex` selected as the Main document. It currently imports `hw2/hw2.tex`; edit the actual homework inside `hw2/`. To compile HW1 instead, change the last line of `main.tex` to `\import{hw1/}{hw1.tex}`. This follows [Overleaf's documented proxy-main pattern](https://docs.overleaf.com/getting-started/recompiling-your-project/the-main-document).
+Keep the root `main.tex` selected as the Main document. It currently imports `hw3/hw3.tex`; edit the actual homework inside `hw3/`. To compile HW1 or HW2 instead, change the last line to `\import{hw1/}{hw1.tex}` or `\import{hw2/}{hw2.tex}`. This follows [Overleaf's documented proxy-main pattern](https://docs.overleaf.com/getting-started/recompiling-your-project/the-main-document).
 
 Pull the latest GitHub changes in **Integrations > GitHub**, then recompile. GitHub synchronization is manual.
 

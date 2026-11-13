@@ -1,0 +1,106 @@
+\section*{Problem 3}
+
+Steady, quasi-one-dimensional flow with no mass addition; all sections
+are isentropic except the normal shock. Use $F(M)=A/A^*$ from Problem 1 and
+the normal-shock stagnation-pressure ratio $\Pi(M)=p_{0,2}/p_{0,1}$ from Problem 2.
+$A_c$ is the fixed capture area; $A_t$ and $A_e$ are the throat and exit areas.
+$A_1^*$ and $A_2^*$ are the sonic reference areas before and after the shock.
+
+\partlabel{(a)}
+% L13 notes PDF pp.1--2, Eqs. (267)--(281): Kantrowitz criterion.
+% L9 notes PDF p.4, Eq. (27): normal-shock stagnation-pressure ratio.
+At starting, place the normal shock at the capture plane. Since $\dot m$ and
+$T_0$ are unchanged across it,
+\begin{gather*}
+\frac{A_c}{A_1^*}=F(M_\infty),\qquad
+\frac{A_2^*}{A_1^*}=\frac{p_{0,1}}{p_{0,2}}=\frac{1}{\Pi(M_\infty)},\\
+A_t\ge A_2^*
+\quad\Longrightarrow\quad
+\frac{A_t}{A_c}\ge\frac{1}{F(M_\infty)\Pi(M_\infty)}.
+\end{gather*}
+\begin{align*}
+F(3)&=4.23456790,\qquad \Pi(3)=0.328343888,\\
+\left(\frac{A_t}{A_c}\right)_{\min}
+&=\frac{1}{(4.23456790)(0.328343888)}
+=\boxed{0.719220342}<0.720000.
+\end{align*}
+Thus the inlet narrowly satisfies the one-dimensional self-starting criterion.
+
+\partlabel{(b)}
+% L12 notes PDF p.1, Eq. (228): area--Mach relation, supersonic branch.
+% L13 notes PDF pp.3--4, Eq. (292) and following procedure: subsonic exit matching.
+In the started inlet, the throat flow immediately before the limiting shock is
+supersonic. The design throat roots are obtained by bisection
+on $[1,3]$; the exit root uses $[10^{-7},1]$.
+\begin{align*}
+F(M_t)&=\frac{A_t}{A_1^*}
+=\frac{A_t}{A_c}F(3)=0.72(4.23456790)=3.04888889,\\
+M_t&=2.65452303,\qquad \Pi(M_t)=0.439907248,\\
+p_{0,2}&=p_{0,\infty}\Pi(M_t)
+=500(0.439907248)=\boxed{219.954~\mathrm{kPa}},\\
+\Delta p_{0,\mathrm{loss}}&=p_{0,\infty}-p_{0,2}
+=500-219.953624=\boxed{280.046~\mathrm{kPa}},\\
+\frac{\Delta p_{0,\mathrm{loss}}}{p_{0,\infty}}
+&=1-0.439907248=\boxed{56.0093\%}.
+\end{align*}
+% L12 notes PDF p.4, Eqs. (244)--(246); PDF p.2, Eq. (237).
+The exit lies on the subsonic branch after the shock:
+\begin{align*}
+F(M_e)&=\frac{A_e}{A_2^*}
+=\frac{A_e}{A_t}\frac{A_t}{A_1^*}\frac{A_1^*}{A_2^*}
+=1.50(3.04888889)(0.439907248)\\
+&=2.01184248
+\quad\Longrightarrow\quad M_e=0.303882446,\\
+p_{b,\max}&\simeq p_e
+=\frac{p_{0,2}}{(1+0.2M_e^2)^{3.5}}
+=\frac{219.953624}{[1+0.2(0.303882446)^2]^{3.5}}
+=\boxed{206.307~\mathrm{kPa}}.
+\end{align*}
+This is the specified estimate of unstart when the shock reaches the throat.
+The subsonic exit requires $p_e=p_b$, while $p_e<p_{0,2}$ because $M_e>0$.
+
+\partlabel{(c)}
+\textbf{(i) Minimum overspeed.}
+% L13 notes PDF p.2, Eqs. (271), (282): limiting starting equation.
+Solve the limiting equation by bisection on $[3,8]$:
+\[
+\frac{1}{F(M_{\infty,\mathrm{start}})\Pi(M_{\infty,\mathrm{start}})}=0.68
+\quad\Longrightarrow\quad
+\boxed{M_{\infty,\mathrm{start}}=3.78120}.
+\]
+The equality gives the limiting value; slightly greater Mach number satisfies
+the starting inequality strictly.
+
+\smallskip
+\noindent\textbf{(ii) Throat Mach number after returning to $M_\infty=3$.}
+% L12 notes PDF p.1, Eq. (228), applied on the started supersonic branch.
+\begin{gather*}
+F(M_t)=0.68F(3)=0.68(4.23456790)=2.87950617,\\
+M_t>1\quad\Longrightarrow\quad\boxed{M_t=2.59394}.
+\end{gather*}
+
+\smallskip
+\noindent\textbf{(iii) Throat-shock pressure recovery.}
+% L9 notes PDF p.4, Eq. (27).
+\[
+\boxed{\frac{p_{0,2}}{p_{0,\infty}}=\Pi(2.59394374)
+=0.462412=46.2412\%},\qquad
+p_{0,2}=500(0.462412096)=231.206~\mathrm{kPa}.
+\]
+
+\smallskip
+\noindent\textbf{(iv) Improvement over the $A_t/A_c=0.72$ design.}
+\begin{align*}
+\Delta\!\left(\frac{p_{0,2}}{p_{0,\infty}}\right)
+&=0.462412096-0.439907248=0.02250485\\
+&=\boxed{2.25048\text{ percentage points}},\\
+\text{Relative improvement}
+&=\left(\frac{0.462412096}{0.439907248}-1\right)100\%
+=\boxed{5.11582\%}.
+\end{align*}
+The smaller throat decelerates the started supersonic flow further, so the
+stagnation-pressure loss across the throat shock is smaller. The inlet requires
+a larger Mach number to start.
+
+% Numerical fzero brackets: F(Mt), [1,3]; F(Me), [1e-7,1];
+% starting equation, [3,8]. Standalone hw3_problem3.m documents the solves.
